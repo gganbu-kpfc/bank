@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>은행 협업 제안 | 한국정책자금지원센터</title>
+  <meta
+    name="description"
+    content="지점의 판단은 그대로 유지하고, 실행까지 이어지는 고객만 준비하여 전달드리는 구조입니다."
+  />
+  <style>
+    :root {
+      --navy: #17324d;
+      --navy-dark: #102537;
+      --blue: #2d6cdf;
+      --mint: #dff7f2;
+      --sky: #f3f8ff;
+      --text: #1a1a1a;
+      --sub: #5b6673;
+      --line: #dde5ee;
+      --white: #ffffff;
+      --shadow: 0 14px 40px rgba(23, 50, 77, 0.08);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background: #f8fbff;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      color: var(--navy-dark);
+    }
+
+    .section-desc {
+      font-size: 18px;
+      color: var(--sub);
+      margin: 0 0 34px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(221, 229, 238, 0.8);
+    }
+
+    .topbar-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 17px;
+      color: var(--navy-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      font-size: 13px;
+      color: var(--sub);
+    }
+
+    .topbar-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      transition: 0.2s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      border-color: var(--line);
+      color: var(--navy-dark);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 72px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(45, 108, 223, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(42, 192, 165, 0.14), transparent 25%),
+        linear-gradient(180deg, #f7fbff 0%, #eef5ff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      margin: 0 0 22px;
+      color: var(--navy-dark);
+    }
+
+    .hero p {
+      margin: 0 0 28px;
+      font-size: 20px;
+      color: var(--sub);
+      max-width: 700px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-badges li {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(221, 229, 238, 0.9);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(23, 50, 77, 0.05);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(221, 229, 238, 0.9);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card-top strong {
+      font-size: 20px;
+      color: var(--navy-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-card-top span {
+      font-size: 14px;
+      color: var(--blue);
+      font-weight: 700;
+      background: #edf4ff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .hero-step-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-step-list li {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 20px;
+      background: #f8fbff;
+      border: 1px solid #e8eef7;
+    }
+
+    .hero-step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .hero-step-text strong {
+      display: block;
+      font-size: 17px;
+      color: var(--navy-dark);
+      margin-bottom: 4px;
+    }
+
+    .hero-step-text span {
+      display: block;
+      color: var(--sub);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cards-3,
+    .cards-4 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .card .num {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #edf4ff;
+      color: var(--blue);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: var(--navy-dark);
+    }
+
+    .card p,
+    .card ul {
+      margin: 0;
+      color: var(--sub);
+      font-size: 16px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .card li + li {
+      margin-top: 8px;
+    }
+
+    .highlight-box {
+      margin-top: 24px;
+      background: linear-gradient(135deg, var(--navy) 0%, #244d75 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-box strong {
+      display: block;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 17px;
+    }
+
+    .process-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--blue), #6bc7ff);
+    }
+
+    .process-card .step {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .process-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: var(--navy-dark);
+    }
+
+    .process-card p {
+      margin: 0 0 14px;
+      color: var(--sub);
+      font-size: 16px;
+    }
+
+    .process-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--sub);
+      font-size: 15px;
+    }
+
+    .process-card li + li {
+      margin-top: 7px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 22px 20px;
+      border-bottom: 1px solid var(--line);
+      font-size: 16px;
+    }
+
+    th {
+      background: #f6faff;
+      color: var(--navy-dark);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    td {
+      color: var(--sub);
+    }
+
+    td strong {
+      color: var(--navy-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .risk-card,
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .risk-card h3,
+    .benefit-card h3 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      color: var(--navy-dark);
+      letter-spacing: -0.03em;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 34px;
+      color: var(--sub);
+      font-size: 16px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #eafaf5;
+      color: #10976b;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .warning-list li::before {
+      background: #fff5f2;
+      color: #d05d39;
+      content: "!";
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cta-section {
+      padding: 88px 0;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: #fff;
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 18px;
+      max-width: 620px;
+    }
+
+    .cta-panel {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .cta-panel ul {
+      list-style: none;
+      margin: 0 0 22px;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .cta-panel li {
+      padding-left: 28px;
+      position: relative;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-panel li::before {
+      content: "•";
+      position: absolute;
+      left: 10px;
+      top: -1px;
+      font-size: 18px;
+    }
+
+    .cta-panel .btn {
+      width: 100%;
+      background: #fff;
+      color: var(--navy-dark);
+    }
+
+    .footer {
+      padding: 28px 0 46px;
+      background: #f8fbff;
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .cta-box,
+      .risk-grid,
+      .benefit-grid,
+      .cards-3,
+      .cards-4,
+      .process-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 68px 0;
+      }
+
+      .hero {
+        padding: 60px 0 52px;
+      }
+
+      .hero-grid,
+      .cta-box,
+      .risk-grid,
+      .benefit-grid,
+      .cards-3,
+      .cards-4,
+      .process-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        min-height: 68px;
+      }
+
+      .topbar-actions {
+        display: none;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .hero-card {
+        padding: 22px;
+      }
+
+      .card,
+      .risk-card,
+      .benefit-card,
+      .process-card {
+        padding: 22px;
+      }
+
+      th,
+      td {
+        padding: 18px 16px;
+      }
+
+      .cta-section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <strong>한국정책자금지원센터 · 은행 협업 제안</strong>
+        <span>지점의 판단은 그대로, 준비된 고객만 전달하는 구조</span>
+      </div>
+      <div class="topbar-actions">
+        <a href="#structure" class="btn btn-outline">협업 구조 보기</a>
+        <a href="#contact" class="btn btn-primary">2~3건 테스트 문의</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">MOU 기반 협업 구조 제안</span>
+          <h1>
+            지점의 판단은 그대로,<br />
+            실행까지 이어지는 고객만<br />
+            준비해서 전달드립니다.
+          </h1>
+          <p>
+            불필요한 상담은 줄이고, 실행 가능성 높은 고객 중심으로
+            진행 효율을 높이는 구조입니다. 최종 판단 권한은 은행에 있고,
+            기존 프로세스는 그대로 유지됩니다.
+          </p>
+
+          <ul class="hero-badges">
+            <li>수수료 없음</li>
+            <li>소개비 없음</li>
+            <li>판단 권한 100% 은행</li>
+            <li>초기 2~3건 테스트 가능</li>
+          </ul>
+
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">2~3건 테스트 진행하기</a>
+            <a href="#problem" class="btn btn-outline">문제 구조 먼저 보기</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <strong>협업 핵심 흐름</strong>
+            <span>준비와 판단의 분리</span>
+          </div>
+
+          <ul class="hero-step-list">
+            <li>
+              <div class="hero-step-num">1</div>
+              <div class="hero-step-text">
+                <strong>KPFC 사전 준비</strong>
+                <span>기본 정보 확인, 1차 가능성 판단, 자금 목적 및 서류 방향 정리</span>
+              </div>
+            </li>
+            <li>
+              <div class="hero-step-num">2</div>
+              <div class="hero-step-text">
+                <strong>은행 2차 판단</strong>
+                <span>정식 심사 전, 빠른 가능성 체크와 주요 리스크 확인</span>
+              </div>
+            </li>
+            <li>
+              <div class="hero-step-num">3</div>
+              <div class="hero-step-text">
+                <strong>보완 및 재정리</strong>
+                <span>은행 판단 기준 반영 후 부족한 부분을 보완하여 재정리</span>
+              </div>
+            </li>
+            <li>
+              <div class="hero-step-num">4</div>
+              <div class="hero-step-text">
+                <strong>정식 심사 및 실행</strong>
+                <span>은행 내부 기준에 따라 최종 심사, 승인 및 실행 진행</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section">
+      <div class="container">
+        <span class="eyebrow">문제 인식</span>
+        <h2 class="section-title">지금 구조, 이런 고민 있으시죠?</h2>
+        <p class="section-desc">
+          정책자금 문의는 많지만, 실제 실행까지 이어지는 고객은 제한적입니다.
+          결국 상담 시간은 늘고, 실적 전환은 낮아지는 구조가 반복됩니다.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="num">01</div>
+            <h3>은행의 고민</h3>
+            <ul>
+              <li>상담은 많은데 실행까지 이어지는 비율은 낮음</li>
+              <li>안될 고객 상담 비중이 높아 시간 소모 큼</li>
+              <li>방향 없이 접수 후 탈락 반복</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="num">02</div>
+            <h3>고객의 고민</h3>
+            <ul>
+              <li>어느 은행으로 가야 할지 판단이 어려움</li>
+              <li>반복 탈락 후 왜 안되는지 정확히 모름</li>
+              <li>시간만 쓰고 다시 처음부터 시작하는 경우 많음</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="num">03</div>
+            <h3>현장 운영의 고민</h3>
+            <ul>
+              <li>사전 판단과 실제 판단 사이 간극 존재</li>
+              <li>준비가 부족한 상태로 접수되는 사례 다수</li>
+              <li>될 수 있는 고객도 타이밍을 놓치는 경우 발생</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight-box">
+          <strong>시간은 쓰는데, 실적은 제한되는 구조.</strong>
+          <p>
+            이 문제를 풀기 위해 필요한 것은 더 많은 고객이 아니라,
+            더 준비된 고객입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="structure" class="section" style="background:#ffffff;">
+      <div class="container">
+        <span class="eyebrow">해결 구조</span>
+        <h2 class="section-title">해결 방법은 단순합니다</h2>
+        <p class="section-desc">
+          KPFC가 먼저 준비하고, 은행이 2차적으로 빠르게 판단하고,
+          그 기준을 반영해 다시 보완한 뒤 정식 심사로 넘어가는 구조입니다.
+        </p>
+
+        <div class="process-wrap">
+          <article class="process-card">
+            <span class="step">STEP 1</span>
+            <h3>사전 준비</h3>
+            <p>KPFC가 고객 기본 정보와 진행 방향을 먼저 정리합니다.</p>
+            <ul>
+              <li>기본 조건 확인</li>
+              <li>1차 가능성 판단</li>
+              <li>자금 목적 정리</li>
+              <li>서류 준비 방향 안내</li>
+            </ul>
+          </article>
+
+          <article class="process-card">
+            <span class="step">STEP 2</span>
+            <h3>은행 2차 판단</h3>
+            <p>정식 심사 전, 은행에서 빠르게 가능성과 리스크를 확인합니다.</p>
+            <ul>
+              <li>진행 가능성 체크</li>
+              <li>주요 리스크 사전 파악</li>
+              <li>정식 심사 전 방향 확인</li>
+            </ul>
+          </article>
+
+          <article class="process-card">
+            <span class="step">STEP 3</span>
+            <h3>보완 및 재정리</h3>
+            <p>은행 판단 기준을 반영해 부족한 부분을 다시 맞춥니다.</p>
+            <ul>
+              <li>서류 보완</li>
+              <li>진행 방향 재정리</li>
+              <li>불필요한 접수 방지</li>
+            </ul>
+          </article>
+
+          <article class="process-card">
+            <span class="step">STEP 4</span>
+            <h3>정식 심사 및 실행</h3>
+            <p>준비된 상태로 정식 심사에 들어가고, 실행까지 연결합니다.</p>
+            <ul>
+              <li>은행 내부 기준 적용</li>
+              <li>최종 판단 및 승인</li>
+              <li>자금 실행</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight-box" style="margin-top:32px;">
+          <strong>준비와 판단을 분리하면, 결과가 달라집니다.</strong>
+          <p>
+            KPFC는 준비를 맡고, 은행은 판단을 맡습니다.
+            그래서 서로의 시간을 줄이고, 고객 진행 속도를 높일 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">역할 구분</span>
+        <h2 class="section-title">역할은 분명하게 나눕니다</h2>
+        <p class="section-desc">
+          협업의 핵심은 준비와 판단을 섞지 않는 것입니다.
+          은행의 독립성은 그대로 유지되고, KPFC는 앞단 정리에 집중합니다.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>한국정책자금지원센터(KPFC)</th>
+                <th>은행</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>고객 방향 안내</strong></td>
+                <td>고객 지역 및 상황에 맞는 협업 은행 안내</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>사전 상담 및 정리</strong></td>
+                <td>기본 정보 확인, 1차 가능성 판단, 방향 정리</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>2차 판단</strong></td>
+                <td>-</td>
+                <td>진행 가능성 및 주요 리스크 빠른 확인</td>
+              </tr>
+              <tr>
+                <td><strong>보완 및 재정리</strong></td>
+                <td>은행 판단 반영 후 부족한 부분 보완</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>정식 심사 및 실행</strong></td>
+                <td>-</td>
+                <td>기존 내부 기준에 따른 최종 심사 및 실행</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box" style="margin-top:28px;">
+          <strong>은행의 판단은 그대로 유지됩니다.</strong>
+          <p>
+            KPFC는 판단에 개입하지 않고, 그 판단에 맞는 준비를 만드는 역할만 수행합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#ffffff;">
+      <div class="container">
+        <span class="eyebrow">은행이 얻는 것</span>
+        <h2 class="section-title">지점 입장에서 달라지는 점</h2>
+        <p class="section-desc">
+          이 구조는 고객을 더 많이 받기 위한 제안이 아니라,
+          같은 시간에 더 많은 실행을 만들기 위한 구조입니다.
+        </p>
+
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <h3>승인 전환율 향상</h3>
+            <ul class="check-list">
+              <li>준비된 고객 중심으로 접수</li>
+              <li>정식 심사 전 리스크 파악 가능</li>
+              <li>탈락 가능성 높은 접수 감소</li>
+            </ul>
+          </article>
+
+          <article class="benefit-card">
+            <h3>상담 효율 개선</h3>
+            <ul class="check-list">
+              <li>불필요한 상담 감소</li>
+              <li>될 가능성 높은 고객 중심 응대</li>
+              <li>지점 업무 피로도 완화</li>
+            </ul>
+          </article>
+
+          <article class="benefit-card">
+            <h3>여신 실적 기여</h3>
+            <ul class="check-list">
+              <li>실행 건수 증가</li>
+              <li>KPI 직접 반영</li>
+              <li>정책자금 진행 지점 이미지 강화</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight-box" style="margin-top:30px;">
+          <strong>같은 시간, 더 많은 실행.</strong>
+          <p>
+            지점은 판단과 실행에 집중하고, KPFC는 앞단 정리에 집중합니다.
+            그래서 결과적으로 여신 실적과 진행 효율이 함께 올라갑니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">리스크 관리</span>
+        <h2 class="section-title">서로 조심해야 할 부분도 분명합니다</h2>
+        <p class="section-desc">
+          협업의 의미는 속도와 효율이지, 특혜나 개입이 아닙니다.
+          그래서 리스크를 줄이는 기준을 명확히 잡아야 합니다.
+        </p>
+
+        <div class="risk-grid">
+          <article class="risk-card">
+            <h3>리스크 없는 운영 기준</h3>
+            <ul class="check-list">
+              <li>수수료 없음</li>
+              <li>소개비 없음</li>
+              <li>기존 프로세스 변경 없음</li>
+              <li>최종 판단 및 승인 권한은 은행에 있음</li>
+              <li>초기 2~3건 테스트 후 지속 여부 결정 가능</li>
+            </ul>
+          </article>
+
+          <article class="risk-card">
+            <h3>반드시 지켜야 할 표현 기준</h3>
+            <ul class="check-list warning-list">
+              <li>“연계되어 있다” “라인이 있다” 같은 표현 금지</li>
+              <li>“미리 승인된다” “확정된다” 같은 표현 금지</li>
+              <li>사전 확정 또는 보장으로 오해될 문구 금지</li>
+              <li>특정 고객 우선 처리 또는 특혜 제공 금지</li>
+              <li>모든 고객은 동일 기준으로 심사</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight-box" style="margin-top:30px;">
+          <strong>지점은 기존과 동일하게 판단만 하시면 됩니다.</strong>
+          <p>
+            이 구조는 은행의 권한을 줄이는 구조가 아니라,
+            그 권한을 더 효율적으로 쓰게 만드는 구조입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+      <div class="container cta-box">
+        <div>
+          <span class="eyebrow" style="background:rgba(255,255,255,0.14); color:#fff;">테스트 제안</span>
+          <h2>
+            고객은 이미 많습니다.<br />
+            문제는 실행까지 이어지는 고객입니다.
+          </h2>
+          <p>
+            초기 2~3건만 테스트해보면 구조 차이를 바로 체감할 수 있습니다.
+            부담 없이 시작하고, 결과 보고 판단하시면 됩니다.
+          </p>
+        </div>
+
+        <div class="cta-panel">
+          <ul>
+            <li>초기 2~3건 테스트 진행</li>
+            <li>결과 확인 후 지속 여부 결정</li>
+            <li>필요 시 언제든 중단 가능</li>
+            <li>판단 권한과 내부 기준은 은행이 그대로 유지</li>
+          </ul>
+          <a href="tel:15889097" class="btn">테스트 진행 문의하기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>한국정책자금지원센터(KPFC)</div>
+      <div>대표번호 1588-9097</div>
+    </div>
+  </footer>
+</body>
+</html>
